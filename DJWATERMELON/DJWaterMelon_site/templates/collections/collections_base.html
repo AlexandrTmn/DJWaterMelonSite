@@ -1,0 +1,19 @@
+{% load django_bootstrap5 %}
+{% load static %}
+
+
+{% extends "base.html" %}
+{% block content %}
+
+{% include "collections/includes/collections_header.html" %}
+
+<main>
+    <div class="container py-5">
+      {% block content %}
+      
+      {% endblock %}
+    </div>
+</main>
+
+
+{% endblock %}

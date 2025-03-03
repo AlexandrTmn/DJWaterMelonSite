@@ -54,10 +54,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'DJWaterMelon_site.urls'
 
+TEMPLATE_DIR  = BASE_DIR / 'templates'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,6 +74,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'DJWaterMelon_site.wsgi.application'
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

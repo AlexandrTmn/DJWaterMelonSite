@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<main class = "main pt-4">
+    <div class="container">
+        <div class="row">
+            <div class = "col-md-9"></div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <article class="card mb-4">
+                                <div class="card-meta">
+                                    Дата публикации: 03.03.2025
+                                    Автор публикации: Админ
+                                </div>
+                                <header class="card-header">
+                                    Это заголовок новости (Сделать ссылкой)
+                                </header>
+                                <a href="">
+                                    <img class="card-img" src="{% static 'img\1.png' %}" alt>
+                                </a>
+                                <p class="card-text"> Это текст для демонстрации новостей</p>
+                                
+                                <h3>
+                                    Количество комментариев
+                                </h3>
+
+                                <div class="d-flex mb-3 p-3 bg-light">
+                                    <div class="text-center">
+                                        <img class="me-3 rounded circle">
+                                        <h6 class="mt-1 mb-0 me-3">Имя пользователя</h6>
+                                    </div>
+                                    <div class="flex-grow-1 d-block">
+                                        <p class="mt-3 mb-2">
+                                            текст комментария
+                                        </p>
+                                        <time class="timeago text-muted" datetime="">
+
+                                        </time>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+            <div class = "col-md-3 ms-auto">
+                <aside class="sidebar">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4>
+                                Блок полезной информации о сайте
+                            </h4>
+                            <p class="card-text">
+                                Данный сайт посвящен музыке. 
+                                Имеет возможность составлять коллекции и комментировать новости
+                            </p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib import auth
-
+from django.conf import settings
 # Create your models here.
 
 class Country(models.Model):
@@ -20,7 +20,9 @@ class Genre(models.Model):
                                   max_length = 50, 
                                   blank=False)
     #Получить id пользователя для опеределения предпочтений
-    #user_genre_favors = models.ManyToManyField(auth.get_user())
+    user_genre_favors = models.ManyToManyField(
+        settings.AUTH_USER_MODEL
+    )
 
     class Meta:
         verbose_name = 'жанр'
@@ -112,7 +114,7 @@ class Author(models.Model):
         self.author_name
 
 
-class playlist(models.Model):
+class Playlist(models.Model):
     playlist_name = models.CharField('Название плейлиста', 
                                      max_length=150,
                                      blank=False)
@@ -125,8 +127,11 @@ class playlist(models.Model):
 
     song = models.ManyToManyField(Song)
     # Описать связь с текущим пользователем (создателем плейлиста)
-    # playlist_owner = models.ForeignKey(auth.get_user().id, )
-    
+    playlist_owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+
     class Meta:
         verbose_name = 'плейлист'
         verbose_name_plural = 'Плейлисты'

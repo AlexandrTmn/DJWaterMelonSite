@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<main class = "main pt-4">
+    <div class="container">
+        <div class="row">
+            <div class = "col-md-9"></div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {% include "includes/news_card.html" %}
+                        </div>
+                
+                        <div class="col-md-6">
+                            {% include "includes/news_card.html" %}
+                        </div>
+                    </div>
+                </div>
+
+            <div class = "col-md-3 ms-auto">
+                <aside class="sidebar">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4>
+                                Блок полезной информации о сайте
+                            </h4>
+                            <p class="card-text">
+                                Данный сайт посвящен музыке. 
+                                Имеет возможность составлять коллекции и комментировать новости
+                            </p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
