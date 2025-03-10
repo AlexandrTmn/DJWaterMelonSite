@@ -13,7 +13,7 @@ class Country(models.Model):
         verbose_name_plural = 'Страна'
 
     def __str__(self):
-        self.country_name
+        return self.country_name
 
 class Genre(models.Model):
     genre_name = models.CharField('Название жанра', 
@@ -29,7 +29,7 @@ class Genre(models.Model):
         verbose_name_plural = 'Жанр'
 
     def __str__(self):
-        self.genre_name
+        return self.genre_name
 
 class FormatType(models.Model):
     type_name = models.CharField('Название типа', 
@@ -41,7 +41,7 @@ class FormatType(models.Model):
         verbose_name_plural = 'Тип'
 
     def __str__(self):
-        self.type_name
+        return self.type_name
 
 class Song(models.Model):
     song_name = models.CharField('Название песни', 
@@ -67,7 +67,7 @@ class Song(models.Model):
         verbose_name_plural = 'Песня'
 
     def __str__(self):
-        self.song_name
+        return self.song_name
 
 class Album(models.Model):
     album_name = models.CharField('Название альбома',
@@ -92,7 +92,7 @@ class Album(models.Model):
         verbose_name_plural = 'Альбом'
 
     def __str__(self):
-        self.album_name
+        return self.album_name
 
 class Author(models.Model):
     author_name = models.CharField('Название исполнителя(ей)',
@@ -111,7 +111,7 @@ class Author(models.Model):
         verbose_name_plural = 'Исполнитель'
 
     def __str__(self):
-        self.author_name
+        return self.author_name
 
 
 class Playlist(models.Model):
@@ -137,4 +137,4 @@ class Playlist(models.Model):
         verbose_name_plural = 'Плейлисты'
 
     def __str__(self):
-        self.playlist_name
+        return self.playlist_name

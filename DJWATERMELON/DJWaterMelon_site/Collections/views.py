@@ -6,10 +6,12 @@ from .models import Album,Author,FormatType,Country,Genre,Playlist,Song
 class AlbumList(ListView):
     model = Album
     template_name = 'collections/collections_base.html'
+    paginate_by = 10
 
 class AuthorList(ListView):
     model = Author
     template_name = 'collections/collections_base.html'
+    paginate_by = 10
 
 class FormatTypeList(ListView):
     model = FormatType
@@ -19,19 +21,23 @@ class FormatTypeList(ListView):
 class CountryList(ListView):
     model = Country
     template_name = 'collections/collections_base.html'
+    paginate_by = 10
 
 
 class GenreList(ListView):
     model = Genre
     template_name = 'collections/collections_base.html'
+    paginate_by = 10
 
 class PlaylistList(ListView):
     model = Playlist
     template_name = 'collections/collections_base.html'
+    paginate_by = 10
 
 class SongList(ListView):
     model = Song
     template_name = 'collections/collections_base.html'
+    paginate_by = 10
 
 
 class AlbumDetail(DetailView):

@@ -21,7 +21,7 @@ class News(models.Model):
         verbose_name_plural = 'Новость'
         
     def __str__(self):
-        self.news_title
+        return self.news_title
 
 class Comment(models.Model):
     news = models.ForeignKey(News, 
@@ -39,3 +39,6 @@ class Comment(models.Model):
     class Meta:
         verbose_name = 'комментарий'
         verbose_name_plural = 'Комментарий'
+
+    def __str__(self):
+        return self.comment_text
