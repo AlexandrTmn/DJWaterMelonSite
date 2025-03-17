@@ -36,9 +36,9 @@ class PlaylistList(ListView):
 
 class SongList(ListView):
     model = Song
-    template_name = 'collections/collections_base.html'
+    context_object_name = 'songs'
+    template_name = 'collections/songs.html'
     paginate_by = 10
-
 
 class AlbumDetail(DetailView):
     model = Album
@@ -67,3 +67,5 @@ class PlaylistDetail(DetailView):
 class SongDetail(DetailView):
     model = Song
     template_name = 'collections/detail_collection.html'
+    context_object_name = 'song'
+    
