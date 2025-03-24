@@ -3,12 +3,95 @@
 
 {% block content %}
 
-<div class="container mt-4">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#"> Homepage </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#"> collection </a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <a href="#"> Song </a>
+                    </li>
+                </ol>
+            </nav>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <img alt="Image_Prev" src="{% static 'img\1.png' %}"  class="img-fluid img-thumbnail mx-auto d-block rounded-start" style="height: 233px; object-fit: cover;" />
+                </div>
 
-    <h1>{% block title %} {% song.song_name %} {% endblock %}</h1>
+            <div class="col-md-8">
+                    <h3 class="text-center">
+                        <b> {{ object.song_name }} </b>
+                    </h3>
 
 
+                <ul class="list-group-item list-group-item-action justify-content-between align-items-center">
+                    {% if object.song_duration %}
+                    <li class="list-item">
+                    Продолжительность песни: {{ object.song_duration  }}
+                    </li>
+                    {% endif %}
+                    {% if object.song_release_date %}
+                    <li class="list-item">
+                        Дата релиза песни: {{ object.song_release_date|date:"d.m.Y"  }}
+                    </li>
+                    {% endif %}
 
+                    {% if object.song_album %}
+                    <li class="list-item">
+                        Альбомы на которых присутсвует данная песня: 
+                        {% for album in object.song_album.all  %}
+                        {{ album.album_name }}
+                        {% endfor %}
+                    </li class="list-item">
+
+                    {% endif %}
+
+                    {% if object.author %}
+                    <li>
+                        Исполнитель(и): 
+                        {% for author in object.author.all  %}
+                        {{ author.author_name }}
+                        {% endfor %}
+                    </li>
+                    {% endif %}
+                
+                    <li class="list-item">
+                        Страна: {{ object.county }}
+                    </li>
+                    <li class="list-item">
+                        Количество прослушиваний: 
+                        <span class="badge bg-secondary me-1"> 1000 </span>
+                    </li>    
+                </ul>
+
+                {% if object.genre %}
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        Жанры: 
+                        <a class="badge bg-secondary me-1" href="#" > {{ object.genre }}</a>
+                    </li>
+                </ul>
+                {% endif %}
+
+                {% if object.song_description %}
+                <h4> 
+                    Полезная информация: 
+                </h4>
+                <p>
+                    {{ object.song_description |linebreaks }}
+                </p>
+                {% endif %}
+            </div>
+        </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

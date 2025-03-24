@@ -17,6 +17,19 @@
           <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Поиск</button>
         </form>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% if auth.is_authenticated %}
+            <span class="navbar-text"> Пользователь: <b>{{ user.username }}</b></span>
+            <li class="nav-item">
+              <a class="nav-link" href=" {% url 'logout' %} "> Выйти </a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link{% if view_name == 'login' %} active {% endif %}" href=" {% url 'login' %} "> Выйти </a>
+            </li>
+            {% endif %}
+        </ul>
       </div>
     </div>
   </nav>

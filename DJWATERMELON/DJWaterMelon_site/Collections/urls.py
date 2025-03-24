@@ -2,7 +2,7 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('collection/songs/<int:id>', SongDetail.as_view(), name = "SongDetail"),
+    path('collection/songs/<slug:pk>/', SongDetail.as_view(), name = "SongDetail"),
     path('collection/albums/<int:id>', AlbumDetail.as_view(), name = "AlbumDetail"),
     path('collection/author/<int:id>', AuthorDetail.as_view(), name = "AuthorDetail"),
     path('collection/country/<str:country_name>', CountryDetail.as_view(), name = "CountryDetail"),

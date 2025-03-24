@@ -52,9 +52,11 @@ class Song(models.Model):
                                          )
     song_release_date = models.DateField('Дата релиза',
                                          blank=True)
+    song_description = models.TextField('Описание', max_length=1000, blank=True)
     song_album = models.ManyToManyField('Album')
 
     author = models.ManyToManyField('Author')
+
     county = models.ForeignKey(Country, on_delete=models.CASCADE,
                                verbose_name='Страна')
     genre = models.ForeignKey( Genre, on_delete=models.CASCADE,

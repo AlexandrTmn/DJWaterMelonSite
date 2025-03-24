@@ -66,6 +66,6 @@ class PlaylistDetail(DetailView):
 
 class SongDetail(DetailView):
     model = Song
-    template_name = 'collections/detail_collection.html'
+    template_name = 'collections/songs_detail.html'
     context_object_name = 'song'
     
